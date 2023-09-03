@@ -23,11 +23,13 @@
   display: grid;
   justify-items: center;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
   a {
     text-decoration: none;
     color: black;
+    overflow: hidden;
+    border-radius: 10px;
   }
   .container-badge-card {
     display: flex;
@@ -55,4 +57,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.new-event {
+  position: absolute;
+  z-index: 1;
+  background: red;
+  opacity: 0.8;
+  color: white;
+  font-weight: bold;
+  padding: 1px 7px;
+  border-radius: 5px;
+  font-size: 10px;
+  top: -5px;
+  left: -5px;
 }

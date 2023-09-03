@@ -1,0 +1,12 @@
+<div class='card-home' id="card_event_<%= event.id %>">
+  <% if event.participants.find_by(user: user) && !event.participants.find_by(user: user).viewed %>
+    <span class="new-event">NEW</span>
+  <% end %>
+  <%= link_to event_path(event) do  %>
+    <%= image_tag "https://source.unsplash.com/random/?#{event.name}", alt: "ImageEvent", class: 'image_home' %>
+    <span class="title-card"><%= event.name %></span>
+    <div class='container-badge-card'>
+      <span class='badge-creator'>Created By:  <%= event.creator == user ? 'You' : event.creator.username %></span>
+    </div>
+  <% end %>
+</div>

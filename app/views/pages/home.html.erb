@@ -1,15 +1,7 @@
 <h1 class='title-home'>MY EVENTS</h1>
 
-<div class="container">
+<div class="container" id="cards_event">
   <% @events.each do |event| %>
-    <div class='card-home'>
-      <%= link_to '#' do  %>
-        <%= image_tag "https://source.unsplash.com/random/?#{event.name}", alt: "ImageEvent", class: 'image_home' %>
-        <span class="title-card"><%= event.name %></span>
-        <div class='container-badge-card'>
-          <span class='badge-creator'>Created By:  <%= event.creator == current_user ? 'You' : event.creator.username %></span>
-        </div>
-      <% end %>
-    </div>
+    <%= render 'event', user: current_user, event: event %>
   <% end %>
 </div>
